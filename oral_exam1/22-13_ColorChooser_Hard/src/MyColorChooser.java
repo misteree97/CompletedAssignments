@@ -3,5 +3,10 @@ import java.util.*;
 public class MyColorChooser extends JFrame {
     JSlider redOption, greenOption, blueOption;
     JLabel redLabel, greenLabel, blueLabel;
-    JPanel panel; 
+    JPanel panel;
+
+    public MyColorChooser()
+    {
+        redOption = new JSlider()
+    }
 }
