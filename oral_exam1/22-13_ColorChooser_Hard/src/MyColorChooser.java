@@ -9,19 +9,19 @@ public class MyColorChooser extends JFrame {
 
     public MyColorChooser()
     {
-        // redOption = new JSlider(0,255, 0);
-        // greenOption = new JSlider(0,255,0);
-        // blueOption = new JSlider(0,255,0);
+       // redOption = new JSlider(0,255, 0);
+       // greenOption = new JSlider(0,255,0);
+       // blueOption = new JSlider(0,255,0);
 
 
 
         //event e = new event();
         //redOption.addChangeListener(e);
-        // greenOption.addChangeListener(e);
-        //  blueOption.addChangeListener(e);
+       // greenOption.addChangeListener(e);
+      //  blueOption.addChangeListener(e);
 
-        // panel = new JPanel();
-        //  panel.setBackground(Color.BLACK);
+       // panel = new JPanel();
+      //  panel.setBackground(Color.BLACK);
         setTitle("MyColorChooser");
         setVisible(true);
         setSize(300,300);
