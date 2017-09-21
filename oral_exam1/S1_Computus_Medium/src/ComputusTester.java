@@ -11,5 +11,6 @@ public class ComputusTester {
         System.out.println("Month: " + c.getMonth() + " Day: " + c.getDay());
         System.out.println("MEDIUM PART");
         c.DisplayEasterDates();
+        System.out.println("");
     }
 }
