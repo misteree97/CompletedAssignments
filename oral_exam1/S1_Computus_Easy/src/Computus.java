@@ -8,11 +8,11 @@ public class Computus {
     private double day;
     private double year;
 
-    public Computus()
+    public Computus(double year)
     {
-        year = 0;
-    } //public Computus(double year){this.year = year;}
-    public void Gregorian(double year)
+        this.year = year;
+    }
+    public void Gregorian()
     {
         double a = year%19;
         double b = Math.floor(year/100);
@@ -26,69 +26,29 @@ public class Computus {
         double k = c % 4;
         double l = (32 + (2*e) + (2*i) - h - k)%7;
         double m = Math.floor((a+(11*h)+(22*l))/451);
-
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+        System.out.println(e);
+        System.out.println(f);
+        System.out.println(g);
+        System.out.println(h);
+        System.out.println(i);
+        System.out.println(k);
+        System.out.println(l);
+        System.out.println(m);
 
         month = Math.floor((h+l-(7*m)+114)/31);
         day = ((h+l-(7*m)+114)%31)+1;
-    }
-    public void DisplayEasterDates()
-    {
-        int [][] date = new int[2][32];
-        for(double i = 1; i <= 5700000; i++)
-        {
-            Gregorian(i);
-            //System.out.println("Month: " + month + " Day: " + day);
-            int iDay = (int)day;
-            if(month == 3.0)
-            {
-                date[0][iDay]++;
-            }
-            if(month == 4.0)
-            {
-                date[1][iDay]++;
-            }
-        }
-        for(int j = 0; j < 1; j++)
-        {
-            for(int k = 1; k <32; k++)
-            {
-                    System.out.println("Easter occurs " + date[j][k] + " times on March " + k);
-            }
-        }
-        for(int j = 1; j < 2; j++)
-        {
-            for(int k = 1; k <31; k++)
-            {
-                System.out.println("Easter occurs " + date[j][k] + " times on April " + k);
-            }
-
-        }
-
     }
     public double getMonth()
     {
         return month;
     }
-    public double getYear()
-    {
-        return year;
-    }
     public double getDay()
     {
         return day;
     }
-    public void setMonth(double month)
-    {
-        this.month = month;
-    }
-    public void setDay(double day)
-    {
-        this.day = day;
-    }
-    public void setYear(double year)
-    {
-        this.year = year;
-    }
-
 
 }
