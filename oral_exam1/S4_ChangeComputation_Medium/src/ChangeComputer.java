@@ -32,7 +32,7 @@ public class ChangeComputer {
     {
         if(twentys > 0)
         {
-            float twentysDivisable =
+            float twentysDivisable = ((int)itemPrice/20);
         }
     }
 
