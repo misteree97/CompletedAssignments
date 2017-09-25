@@ -6,8 +6,10 @@ public class ComputusTester {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a year to calculate the date of Easter");
         double year = sc.nextDouble();
-        Computus c = new Computus(year);
-        c.Gregorian();
+        Computus c = new Computus();
+        c.Gregorian(year);
         System.out.println("Month: " + c.getMonth() + " Day: " + c.getDay());
+        System.out.println("MEDIUM PART");
+        c.DisplayEasterDates();
     }
 }
