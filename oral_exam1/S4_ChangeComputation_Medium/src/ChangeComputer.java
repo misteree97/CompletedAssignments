@@ -34,7 +34,7 @@ public class ChangeComputer {
         if(twentys > 0)
         {
             int twentysDivisable = ((int)itemPrice/20);
-            while(twentys > twentysDivisable && twentys > 0)
+            while(twentysDivisable >twentys  && twentys > 0)
             {
                 itemPrice = itemPrice % twentysDivisable;
                 twentys--;
@@ -43,7 +43,7 @@ public class ChangeComputer {
         if(tens > 0 )
         {
             int tensDivisable = ((int) itemPrice / 10);
-            while(tens > tensDivisable && tens > 0)
+            while(tensDivisable > tens && tens > 0)
             {
                 itemPrice = itemPrice % tensDivisable;
                 tens--;
@@ -52,7 +52,7 @@ public class ChangeComputer {
         if(fives > 0)
         {
             int fivesDivisable = ((int) itemPrice / 5);
-            while(fives > fivesDivisable && fives > 0)
+            while(fivesDivisable > fives && fives > 0)
             {
                 itemPrice = itemPrice % fivesDivisable;
                 fives--;
@@ -69,7 +69,7 @@ public class ChangeComputer {
         }
         if(quarters > 0)
         {
-            int quartersDivisable = ((int)itemPrice / .25);
+            int quartersDivisable = (int)( itemPrice / .25);
             while(quarters > quartersDivisable && quarters > 0)
             {
                 itemPrice = itemPrice % quartersDivisable;
@@ -78,7 +78,7 @@ public class ChangeComputer {
         }
         if(dimes > 0)
         {
-            int dimesDivisable = ((int) itemPrice / .1);
+            int dimesDivisable = (int)(itemPrice / .1);
             while(dimes > dimesDivisable && dimes > 0)
             {
                 itemPrice = itemPrice % dimesDivisable;
@@ -87,7 +87,7 @@ public class ChangeComputer {
         }
         if(nickels > 0)
         {
-            int nickelsDivisable = ((int) itemPrice / .05);
+            int nickelsDivisable = (int)(itemPrice / .05);
             while(fives > nickelsDivisable && fives > 0)
             {
                 itemPrice = itemPrice % nickelsDivisable;
@@ -96,7 +96,7 @@ public class ChangeComputer {
         }
         if(pennys > 0)
         {
-            int pennysDivisable = ((int) itemPrice / .01);
+            int pennysDivisable = (int)(itemPrice / .01);
             while(pennys > pennysDivisable && pennys > 0)
             {
                 itemPrice = itemPrice % pennysDivisable;
