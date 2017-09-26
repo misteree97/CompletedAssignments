@@ -27,6 +27,7 @@ public class ChangeComputer {
         System.out.println("Dimes: " + dimes);
         System.out.println("Nickels: " + nickels);
         System.out.println("Pennys: " + pennys);
+        System.out.println("");
     }
     public void payForItem(double itemPrice, double customerPaid)
     {
