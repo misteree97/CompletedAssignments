@@ -42,77 +42,97 @@ public class ChangeComputer
     }
     public void payForItem()
     {
-        if(twentys > 0)
+        double changeToGive = customerAmount - totalAmount;
+        if(twentys > 0 && changeToGive >=20.00)
         {
-            int twentysDivisable = ((int)totalAmount/20);
-            while(twentysDivisable >twentys  && twentys > 0)
+            int twentysGiven = 0;
+            //int twentysDivisable = ((int)changeToGive/20);
+            while(changeToGive >= 20.00  && twentys > 0)
             {
-                totalAmount = totalAmount % twentysDivisable;
+                changeToGive = changeToGive - 20;
                 twentys--;
+                twentysGiven++;
             }
+            System.out.println("Twenties Given: " + twentysGiven);
         }
-        if(tens > 0 )
+        if(tens > 0 && changeToGive >= 10.00)
         {
-            int tensDivisable = ((int) totalAmount / 10);
-            while(tensDivisable > tens && tens > 0)
+            int tensGiven = 0;
+            while(changeToGive >= 10.00 && tens > 0)
             {
-                totalAmount = totalAmount % tensDivisable;
+                changeToGive = changeToGive - 10;
                 tens--;
+                tensGiven++;
             }
+            System.out.println("Tens Given: " + tensGiven);
         }
-        if(fives > 0)
+        if(fives > 0 && changeToGive >= 5.00)
         {
-            int fivesDivisable = ((int) totalAmount / 5);
-            while(fivesDivisable > fives && fives > 0)
+            int fivesGiven = 0;
+            while(changeToGive >= 5.00 && fives > 0)
             {
-                totalAmount = totalAmount % fivesDivisable;
+                changeToGive = changeToGive - 5;
                 fives--;
+                fivesGiven++;
             }
+            System.out.println("Fives Given: " + fivesGiven);
         }
-        if(ones > 0)
+        if(ones > 0 && changeToGive >= 1.00)
         {
-            int onesDivisable = (int)totalAmount;
-            while(ones > onesDivisable && ones > 0)
+            int onesGiven = 0;
+            //int onesDivisable = (int)totalAmount;
+            while(changeToGive >= 1.00 && ones > 0)
             {
-                totalAmount = totalAmount % onesDivisable;
+                changeToGive = changeToGive - 1;
                 ones--;
+                onesGiven++;
             }
+            System.out.println("Ones Given: " + onesGiven);
         }
-        if(quarters > 0)
+        if(quarters > 0 && changeToGive >= .25)
         {
-            int quartersDivisable = (int)(totalAmount / .25);
-            while(quarters > quartersDivisable && quarters > 0)
+            int quartersGiven = 0;
+            while(changeToGive >= .25 && quarters > 0)
             {
-                totalAmount = totalAmount % quartersDivisable;
+                changeToGive = changeToGive - .25;
                 quarters--;
+                quartersGiven++;
             }
+            System.out.println("Quarters Given: " + quartersGiven);
         }
-        if(dimes > 0)
+        if(dimes > 0 && changeToGive >= .10)
         {
-            int dimesDivisable = (int)(totalAmount / .1);
-            while(dimes > dimesDivisable && dimes > 0)
+            int dimesGiven = 0;
+            while(changeToGive >= .10 && dimes > 0)
             {
-                totalAmount = totalAmount % dimesDivisable;
+                changeToGive = changeToGive - .1;
                 dimes--;
+                dimesGiven++;
             }
+            System.out.println("Dimes Given: " + dimesGiven);
         }
-        if(nickels > 0)
+        if(nickels > 0 && changeToGive >= .05)
         {
-            int nickelsDivisable = (int)(totalAmount / .05);
-            while(fives > nickelsDivisable && fives > 0)
+            int nickelsGiven = 0;
+            //int nickelsDivisable = (int)(totalAmount / .05);
+            while(changeToGive >= .05 && nickels > 0)
             {
-                totalAmount= totalAmount % nickelsDivisable;
+                changeToGive = changeToGive -.05;
                 nickels--;
+                nickelsGiven++;
             }
+            System.out.println("Nickels Given: " + nickelsGiven);
         }
-        if(pennys > 0)
+        if(pennys > 0 && changeToGive >= .01)
         {
-            int pennysDivisable = (int)(totalAmount / .01);
-            while(pennys > pennysDivisable && pennys > 0)
+            int pennysGiven = 0;
+            while(changeToGive >= .01 && pennys > 0)
             {
-                totalAmount = totalAmount % pennysDivisable;
+                changeToGive = changeToGive -.01;
                 pennys--;
+                pennysGiven++;
             }
+            System.out.println("Pennies Given: " + pennysGiven);
         }
         displayCashRegister();
     }
