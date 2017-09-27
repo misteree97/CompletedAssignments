@@ -134,6 +134,27 @@ public class ChangeComputer
             }
             System.out.println("Pennies Given: " + pennysGiven);
         }
+        if(twentys == 0 && tens == 0 && fives == 0 && ones == 0 && quarters == 0 && dimes == 0 && nickels == 0 && pennys == 0 && changeToGive > 0.00)
+        {
+            System.out.println("Cash Register cannot provide the required change. Program will exit.");
+            System.exit(0);
+        }
         displayCashRegister();
+    }
+    public void setTotalAmount(double newAmount)
+    {
+        totalAmount = newAmount;
+    }
+    public void setCustomerAmount(double newCustomerAmount)
+    {
+        customerAmount = newCustomerAmount;
+    }
+    public double getTotalAmount()
+    {
+        return totalAmount;
+    }
+    public double getCustomerAmount()
+    {
+        return customerAmount;
     }
 }
