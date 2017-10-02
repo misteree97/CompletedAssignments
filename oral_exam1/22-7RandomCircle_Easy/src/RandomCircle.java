@@ -24,22 +24,23 @@ public class RandomCircle extends JFrame {
         int max = 400;
         int min = 100;
 
-        int x = ran.nextInt((max - min) + 1) + min;
+        int radius = ran.nextInt((max - min) + 1) + min;
 
 
 
         g.setColor(Color.BLACK);
-        g.drawOval(480-x, 480-x, x*2, x*2);
+        g.drawOval(480-radius, 480-radius, radius*2, radius*2);
 
-        String Radius = "The Radius is: " + x;
-        String Diameter = "The Diameter = 2 * Radius = " + x*2;
+        String Radius = "The Radius is: " + radius;
+        String Diameter = "The Diameter = 2 * Radius = " + radius*2;
         String pi = "\u03c0";
-        String area = "The Area = " + pi + " * Radius ^ 2 = " +(Math.PI * Math.pow(x, 2) );
-        String Circumference = "The Circumference = 2 * " + pi + " * Radius = " + (2 * Math.PI * x) ;
+        String area = "The Area = " + pi + " * Radius ^ 2 = " +(Math.PI * Math.pow(radius, 2) );
+        String Circumference = "The Circumference = 2 * " + pi + " * Radius = " + (2 * Math.PI * radius) ;
 
-        g.setFont(new Font("TimesRoman", Font.PLAIN, 12));
 
-        g.drawString(Radius, 100, 100);
+        g.setFont(new Font("TimesRoman", Font.PLAIN, 12));//have to set font otherwise prints on coded background
+
+        g.drawString(Radius, 100, 100);//places information of circle on jFrame
         g.drawString(Diameter, 100, 120);
         g.drawString(area, 100, 140);
         g.drawString(Circumference, 100, 160);
