@@ -1,8 +1,11 @@
-public abstract class TwoDShape extends Shape {
+import java.awt.*;
 
-    public TwoDShape(int xCoord, int yCoord, String name)
+public abstract class TwoDShape extends Shape {
+    private double area;
+
+    public TwoDShape(int xCoord, int yCoord, String name, Color c)
     {
-        super(xCoord, yCoord, name);
+        super(xCoord, yCoord, name, c);
     }
     public double getArea()
     {

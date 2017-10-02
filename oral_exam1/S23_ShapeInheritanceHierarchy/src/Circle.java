@@ -1,18 +1,21 @@
-public class Circle extends TwoDShape {
-    private int radius;
+import java.awt.*;
 
-    public Circle(int xCoord, int yCoord, int radius, String name)
+public class Circle extends TwoDShape {
+    private double radius;
+
+    public Circle(int xCoord, int yCoord, String name, Color c, double radius)
     {
-        super(xCoord, yCoord, radius, name);
+        super(xCoord, yCoord, name, c);
+        this.radius = radius;
     }
-    public int getArea()
+    public double getArea()
     {
-        int area = (int)Math.PI * radius * radius;
+        double area = Math.PI * radius * radius;
         return area;
     }
-    public int getCircumference()
+    public double getCircumference()
     {
-        int circumference = (int)Math.PI * 2 * radius;
+        double circumference = Math.PI * 2 * radius;
         return circumference;
     }
 }
