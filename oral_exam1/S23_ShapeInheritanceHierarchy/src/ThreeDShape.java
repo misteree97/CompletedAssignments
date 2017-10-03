@@ -9,5 +9,6 @@ public abstract class ThreeDShape extends Shape{
     {
         super(xCoord, yCoord, name, c);
     }
-
+    public abstract double getVolume();
+    public abstract double getSurfaceArea();
 }

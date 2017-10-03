@@ -7,6 +7,11 @@ public class Computus {
         year = 0;
     }
 
+    /**
+     * computes and prints the month and day easter is on in a certain year
+     *
+     * @param year        the year to compute when easter is
+     */
     public void Gregorian(double year) {
         double a = year % 19.0;
         double b = Math.floor(year / 100.0);
@@ -33,6 +38,9 @@ public class Computus {
         }
     }
 
+    /**
+     * computes and prints the amount of times easter occurs on each day for an entire gregorian cycle
+     */
     public void DisplayEasterDates() {
         int[][] date = new int[2][32];
 
@@ -64,26 +72,50 @@ public class Computus {
 
     }
 
+    /**
+     * returns a double representation of the month
+     * @return month
+     */
     public double getMonth() {
         return this.month;
     }
 
+    /**
+     * returns a double representation of the year
+     * @return year
+     */
     public double getYear() {
         return this.year;
     }
 
+    /**
+     * returns a double representation of the dy
+     * @return day
+     */
     public double getDay() {
         return this.day;
     }
 
+    /**
+     * updates the month variable to new value
+     * @param month
+     */
     public void setMonth(double month) {
         this.month = month;
     }
 
+    /**
+     * updates the day variable to a new value
+     * @param day
+     */
     public void setDay(double day) {
         this.day = day;
     }
 
+    /**
+     * updates the year variable to a new value
+     * @param year
+     */
     public void setYear(double year) {
         this.year = year;
     }

@@ -27,6 +27,10 @@ public class ChangeComputer
             customerAmount = sc.nextDouble();
         }
     }
+
+    /**
+     * Displays the amount of bills/change in the cash register
+     */
     public void displayCashRegister()
     {
         System.out.println("Cash Register Status");
@@ -40,6 +44,10 @@ public class ChangeComputer
         System.out.println("Pennys: " + pennys);
         System.out.println("");
     }
+
+    /**
+     * Method that updates the cash register to proper amounts, displays new cash register values and computes the change given.
+     */
     public void payForItem()
     {
         double changeToGive = customerAmount - totalAmount;
@@ -80,7 +88,6 @@ public class ChangeComputer
         if(ones > 0 && changeToGive >= 1.00)
         {
             int onesGiven = 0;
-            //int onesDivisable = (int)totalAmount;
             while(changeToGive >= 1.00 && ones > 0)
             {
                 changeToGive = changeToGive - 1;
@@ -141,18 +148,38 @@ public class ChangeComputer
         }
         displayCashRegister();
     }
+
+    /**
+     * sets the total amount to be paid for the item
+     * @param newAmount
+     */
     public void setTotalAmount(double newAmount)
     {
         totalAmount = newAmount;
     }
+
+    /**
+     * sets the amount the customer paid to a new value
+     * @param newCustomerAmount
+     */
     public void setCustomerAmount(double newCustomerAmount)
     {
         customerAmount = newCustomerAmount;
     }
+
+    /**
+     * returns the total amount to be paid for the item
+     * @return totalAmount
+     */
     public double getTotalAmount()
     {
         return totalAmount;
     }
+
+    /**
+     * gets the amount the customer paid for the item
+     * @return customerAmount
+     */
     public double getCustomerAmount()
     {
         return customerAmount;

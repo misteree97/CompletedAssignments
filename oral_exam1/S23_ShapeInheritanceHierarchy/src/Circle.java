@@ -8,11 +8,32 @@ public class Circle extends TwoDShape {
         super(xCoord, yCoord, name, c);
         this.radius = radius;
     }
+
+    /**
+     * computes and returns the area of the circle
+     *
+     * @return area  the area of the circle
+     */
+    @Override
     public double getArea()
     {
         double area = Math.PI * radius * radius;
         return area;
     }
+    @Override
+    /**
+     * Calls the getCircumference method to return the perimeter of the circle
+     * @return perimeter
+     */
+    public double getPerimeter()
+    {
+        return getCircumference();
+    }
+
+    /**
+     * computes the circumference of the circle object
+     * @return circumference  the circumference
+     */
     public double getCircumference()
     {
         double circumference = Math.PI * 2 * radius;

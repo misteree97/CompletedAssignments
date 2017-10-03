@@ -7,12 +7,6 @@ public abstract class TwoDShape extends Shape {
     {
         super(xCoord, yCoord, name, c);
     }
-    public double getArea()
-    {
-        return 0.0;
-    }
-    public double getPerimeter()
-    {
-        return 0.0;
-    }
+    public abstract double getArea();
+    public abstract double getPerimeter();
 }
