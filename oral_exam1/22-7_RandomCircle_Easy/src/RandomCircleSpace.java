@@ -8,13 +8,12 @@ public class RandomCircleSpace extends JFrame
     {
         super("Random Circle Generator");
         RandomCircle ranCircle = new RandomCircle();
-        displayStats = new JTextArea(15, 30);
+        displayStats = new JTextArea(1, 1);
         displayStats.setText("Radius: " + ranCircle.getRadius() + "\nDiameter: " + ranCircle.computeDiameter() + "\n Area: " + ranCircle.computeArea() + "\n Cicumference: " + ranCircle.computeCircumference());
         displayStats.setEditable(false);
-        Container display = new Container();
-        display.add(ranCircle, BorderLayout.SOUTH);
-        display.add(displayStats, BorderLayout.NORTH);
-        display.setVisible(true);
+        add(ranCircle);
+        add(displayStats, BorderLayout.SOUTH);
+        setVisible(true);
 
     }
 }

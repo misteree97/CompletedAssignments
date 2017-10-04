@@ -12,11 +12,19 @@ public class Triangle extends TwoDShape {
         this.side3 = side3;
     }
     @Override
+    /**
+     * returns the perimeter of a triangle (side1 + side2 + side3)
+     * @return perimeter
+     */
     public double getPerimeter()
     {
         return side1 + side2 + side3;
     }
     @Override
+    /**
+     * returns the area of a triangle
+     * @return area
+     */
     public double getArea()
     {
         double p = (side1+side2+side3)/2.0;

@@ -10,6 +10,10 @@ public class Tetrahedron extends ThreeDShape {
     }
 
     @Override
+    /**
+     * returns the volume of the tetrahedron
+     * @return volume
+     */
     public double getVolume()
     {
         double cubedSide = side * side * side;
@@ -17,6 +21,10 @@ public class Tetrahedron extends ThreeDShape {
         return volume;
     }
     @Override
+    /**
+     * returns the surface area of the tetrahedron
+     * @return surface area
+     */
     public double getSurfaceArea()
     {
         return Math.sqrt(3) * side * side;

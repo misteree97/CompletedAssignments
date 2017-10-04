@@ -10,11 +10,19 @@ public class Square extends TwoDShape {
     }
 
     @Override
+    /**
+     * returns the area of the square
+     * @return area
+     */
     public double getArea()
     {
         return side * side;
     }
     @Override
+    /**
+     * returns the perimeter of the square
+     * @return perimeter
+     */
     public double getPerimeter()
     {
         return side * 4;

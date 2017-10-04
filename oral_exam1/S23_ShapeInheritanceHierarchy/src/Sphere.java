@@ -9,11 +9,19 @@ public class Sphere extends ThreeDShape {
         this.radius = radius;
     }
     @Override
+    /**
+     * returns the volume of the sphere
+     * @return volume of Sphere(4/3* PI * r^3)
+     */
     public double getVolume()
     {
         return (4/3)*Math.PI*radius*radius*radius;
     }
     @Override
+    /**
+     * returns the surface area of the sphere
+     * @return surface area of sphere(4* PI * radius^2)
+     */
     public double getSurfaceArea()
     {
         return 4 * Math.PI * radius * radius;

@@ -7,6 +7,16 @@ public abstract class TwoDShape extends Shape {
     {
         super(xCoord, yCoord, name, c);
     }
+
+    /**
+     * abstract so children classes can have getArea method
+     * @return double
+     */
     public abstract double getArea();
+
+    /**
+     * abstract so children classes can have getPerimeter method
+     * @return double
+     */
     public abstract double getPerimeter();
 }

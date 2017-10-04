@@ -6,10 +6,20 @@ public abstract class OneDShape extends Shape {
     {
         super(xCoord,yCoord,name,c);
     }
+
+    /**
+     * sets the length variable to a new value
+     * @param length
+     */
     public void setLength(double length)
     {
         this.length = length;
     }
+
+    /**
+     * returns the length of the object
+     * @return length
+     */
     public double getLength()
     {
         return length;

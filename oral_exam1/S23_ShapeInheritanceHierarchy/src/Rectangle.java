@@ -9,11 +9,19 @@ public class Rectangle extends TwoDShape{
         this.side2 = side2;
     }
     @Override
+    /**
+     * returns the area of the rectangle
+     * @return area
+     */
     public double getArea()
     {
         return side1 * side2;
     }
     @Override
+    /**
+     * gets the perimeter of the rectangle
+     * @return perimeter
+     */
     public double getPerimeter()
     {
         return side1 + side1 + side2 + side2;

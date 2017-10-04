@@ -2,41 +2,53 @@ import javax.swing.*;
 import java.awt.*;
 import java.lang.Math;
 
+/**
+ * @author Elliot Lohr
+ */
 public class RandomCircle extends JPanel
 {
-    private int radius = 100; //(int)(Math.random() * 250 + 1);
+    private int radius = (int)(Math.random() * 250 + 1);
     public RandomCircle()
     {
         setSize(300, 300);
+        setBackground(Color.BLACK);
         //paintComponent(null);
     }
 
     @Override
+    /**
+     * Paints the circle object on Jpanel
+     * @param Graphics g
+     */
     public void paintComponent(Graphics g)
     {
-        //int radius = (int)(Math.random() * 250) + 1;
-        //int diameter = radius * 2;
-        //float red = rand.nextFloat();
-       // float green = rand.nextFloat();
-       // float blue = rand.nextFloat();
-       // Color randomColor = new Color(red, green, blue);
-
-       // graphics.setColor(randomColor);
-        //graphics.setColor(Color.BLACK);
-        //graphics.drawOval(480, 480, diameter, diameter);
-       // super.paintComponent(g);
         g.setColor(Color.BLACK);
-        g.drawOval(0,0, computeDiameter(), computeDiameter());
+        g.drawOval(150,150, computeDiameter(), computeDiameter());
     }
+
+    /**
+     * computes and returns the diameter (radius*2)
+     * @return diameter
+     */
     public int computeDiameter()
     {
         return radius * 2;
     }
+
+    /**
+     * computes the area of the circle(PI * radius^2)
+     * @return area
+     */
     public int computeArea()
     {
-        int area = (int)(Math.PI * Math.sqrt(radius));
+        int area = (int)(Math.PI * radius * radius);
         return area;
     }
+
+    /**
+     * computes the circumference of the circle
+     * @return
+     */
     public int computeCircumference()
     {
         int circumference = (int)(2*Math.PI*radius);
