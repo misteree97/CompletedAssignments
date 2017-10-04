@@ -12,10 +12,15 @@ public class GuessNumber extends JFrame {
     {
         super("Guess Number Game");
         backColor = Color.WHITE;
+        Container container = getContentPane();
+        container.setBackground(backColor);
         text1 = new JLabel("I have a number between 1-1000. Guess the number!");
+        text1.setSize(270,20);
         text2 = new JLabel("Enter your first guess");
+        text2.setSize(270,20);
 
-        userGuess = new JTextField()
+        userGuess = new JTextField(5);
+        //userGuess.addActionListener(new InputHandler());
     }
 
     public void playerGuess(int userInput)

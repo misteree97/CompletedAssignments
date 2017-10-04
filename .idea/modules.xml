@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/12-14_GuessNumber_Medium/12-14_GuessNumber_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/12-14_GuessNumber_Medium/12-14_GuessNumber_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/22-7RandomCircle_Easy/22-7RandomCircle_Easy.iml" filepath="$PROJECT_DIR$/oral_exam1/22-7RandomCircle_Easy/22-7RandomCircle_Easy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oral_exam1/22-7_RandomCircle_Easy/22-7_RandomCircle_Easy.iml" filepath="$PROJECT_DIR$/oral_exam1/22-7_RandomCircle_Easy/22-7_RandomCircle_Easy.iml" />
       <module fileurl="file://$PROJECT_DIR$/class_demos/ch03/Fig03_12/Fig03_12.iml" filepath="$PROJECT_DIR$/class_demos/ch03/Fig03_12/Fig03_12.iml" />
       <module fileurl="file://$PROJECT_DIR$/class_demos/ch03/Fig03_13/Fig03_13.iml" filepath="$PROJECT_DIR$/class_demos/ch03/Fig03_13/Fig03_13.iml" />
       <module fileurl="file://$PROJECT_DIR$/class_demos/ch04/Fig04_04-05/Fig04_04-05.iml" filepath="$PROJECT_DIR$/class_demos/ch04/Fig04_04-05/Fig04_04-05.iml" />
