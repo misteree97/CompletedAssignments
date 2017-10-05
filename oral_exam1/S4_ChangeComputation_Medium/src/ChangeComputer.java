@@ -2,6 +2,9 @@ import java.lang.*;
 import java.util.*;
 public class ChangeComputer
 {
+    /**
+     *
+     */
     private double totalAmount;
     private double customerAmount;
     private int twentys = ((int)(Math.random() * 15));
