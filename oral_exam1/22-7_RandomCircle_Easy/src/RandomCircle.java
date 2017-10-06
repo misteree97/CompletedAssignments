@@ -12,6 +12,10 @@ public class RandomCircle extends JPanel
      * The radius, initialized to a random number between 1-250
      */
     private int radius = (int)(Math.random() * 250 + 1);
+
+    /**
+     * No argument constructor for a RandomCircle object
+     */
     public RandomCircle()
     {
         setSize(300, 300);
@@ -55,6 +59,11 @@ public class RandomCircle extends JPanel
         int circumference = (int)(2*Math.PI*radius);
         return circumference;
     }
+
+    /**
+     * returns the radius of the circle
+     * @return radius
+     */
     public int getRadius()
     {
         return radius;

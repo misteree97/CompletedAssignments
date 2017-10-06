@@ -2,7 +2,7 @@ import java.lang.*;
 import java.util.*;
 
 /**
- * @Author Elliot Lohr
+ * @author Elliot Lohr
  * Represents a cash register object that will compute the change needed to be given to the customer
  */
 public class ChangeComputer
@@ -215,7 +215,7 @@ public class ChangeComputer
 
     /**
      * returns the total amount to be paid for the item
-     * @return totalAmount
+     * @return totalAmount      The price of the item
      */
     public double getTotalAmount()
     {
@@ -224,7 +224,7 @@ public class ChangeComputer
 
     /**
      * gets the amount the customer paid for the item
-     * @return customerAmount
+     * @return customerAmount   The amount the customer paid
      */
     public double getCustomerAmount()
     {

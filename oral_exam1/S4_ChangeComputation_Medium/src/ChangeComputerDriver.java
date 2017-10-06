@@ -1,4 +1,9 @@
 import java.util.*;
+
+/**
+ * @author Elliot Lohr
+ * This class tests and runs the ChangeComputer class, which will allow users to compute the change given from a cash register
+ */
 public class ChangeComputerDriver {
     public static void main(String[] args)
     {

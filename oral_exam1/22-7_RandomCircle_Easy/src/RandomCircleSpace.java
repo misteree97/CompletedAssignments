@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * @Author Elliot Lohr
+ * @author Elliot Lohr
  * Program creates a JFrame that holds components for a random circle generator
  */
 public class RandomCircleSpace extends JFrame
@@ -11,6 +11,10 @@ public class RandomCircleSpace extends JFrame
      * JTextArea that displays the information about the random circle
      */
     private JTextArea displayStats;
+
+    /**
+     * No argument constructor that creates a Jframe and puts a randomCircle Jpanel on it along with a jtextarea that displays information about the circle
+     */
     public RandomCircleSpace()
     {
         super("Random Circle Generator");

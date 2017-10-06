@@ -4,17 +4,44 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * @Author Elliot Lohr
+ * @author Elliot Lohr
  */
 public class GuessNumber extends JFrame {
+    /**
+     * The number the user has to guess, initialized to a random number between 1 and 1000
+     */
     private int numberToGuess = (int)(Math.random() * 1000)+1;
+    /**
+     * The number the user guessed
+     */
     private int numberGuessed;
+    /**
+     * The number of guesses the user used
+     */
     private int numberOfGuess = 0;
+    /**
+     * The color of the background of JFrame display
+     */
     private Color backColor;
+    /**
+     * JLabels used to create and display text to user
+     */
     private JLabel text1, text2, text3;
+    /**
+     * JTextField used for the user to input a guess
+     */
     private JTextField userGuess;
+    /**
+     * JButton that user can press to start a new game
+     */
     private JButton newGameButton;
+    /**
+     * The original difference between the users first guess and the actual number
+     */
     private int ogDifference;
+    /**
+     * Container used to hold components
+     */
     Container container;
 
     /**

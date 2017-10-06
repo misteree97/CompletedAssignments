@@ -1,6 +1,6 @@
 /**
- * @Author Elliot Lohr
- *
+ * @author Elliot Lohr
+ * This class will create a computus object, which is capable of computing the date of easter given a year and displaying how many times easter occurs on each day in a gregorian cycle
  */
 public class Computus {
     /**
@@ -14,7 +14,7 @@ public class Computus {
     /**
      * The year that program will determine the date of easter in
      */
-    private double year = 0.0;
+    private double year;
 
 
 
@@ -46,11 +46,10 @@ public class Computus {
         double m = Math.floor((a + 11.0 * h + 22.0 * l) / 451.0);
         this.month = Math.floor((h + l - 7.0 * m + 114.0) / 31.0);
         this.day = (int)(h + l - 7.0 * m + 114.0) % 31.0 + 1.0;
-
-        //easter will only occur in march or april so looks for month 3.0 and 4.0
     }
     public void printEaster()
     {
+        //easter will only occur in march or april so looks for month 3.0 and 4.0
         if(month == 3.0)
         {
             System.out.println("Easter is March " + day);
