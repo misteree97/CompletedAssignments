@@ -1,7 +1,22 @@
+/**
+ * @Author Elliot Lohr
+ *
+ */
 public class Computus {
+    /**
+     * The month that easter will occur in
+     */
     private double month;
+    /**
+     * The day that easter will occur on
+     */
     private double day;
+    /**
+     * The year that program will determine the date of easter in
+     */
     private double year = 0.0;
+
+
 
     /**
      * No argument constructor

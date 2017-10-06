@@ -5,6 +5,7 @@ public class ChangeComputerDriver {
         Scanner sc = new Scanner(System.in);
         ChangeComputer register = new ChangeComputer();
         int x = 0;
+        //runs until user decides to exit or cash register is empty
         while(x == 0)
         {
             register.displayCashRegister();

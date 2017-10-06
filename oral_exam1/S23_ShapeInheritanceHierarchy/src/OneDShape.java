@@ -1,10 +1,15 @@
 import java.awt.*;
 
+/**
+ * @Author Elliot Lohr
+ * This program provides a template for a OneDShape object
+ */
 public abstract class OneDShape extends Shape {
     private double length;
-    public OneDShape(int xCoord, int yCoord, String name, Color c)
+    public OneDShape(int xCoord, int yCoord, String name, Color c, double length)
     {
         super(xCoord,yCoord,name,c);
+        this.length = length;
     }
 
     /**

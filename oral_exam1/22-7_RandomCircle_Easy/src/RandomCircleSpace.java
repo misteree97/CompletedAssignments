@@ -3,9 +3,13 @@ import java.awt.*;
 
 /**
  * @Author Elliot Lohr
+ * Program creates a JFrame that holds components for a random circle generator
  */
 public class RandomCircleSpace extends JFrame
 {
+    /**
+     * JTextArea that displays the information about the random circle
+     */
     private JTextArea displayStats;
     public RandomCircleSpace()
     {

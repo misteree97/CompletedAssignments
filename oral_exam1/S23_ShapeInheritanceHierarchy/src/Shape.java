@@ -1,12 +1,34 @@
 import java.awt.*;
 
+/**
+ * @Author Elliot Lohr
+ * This program provides a template for a shape object
+ */
 public abstract class Shape {
+    /**
+     * the xcoord for shape to be drawn at
+     */
     private int xCoord;
+    /**
+     * the ycoord for shape to be drawn at
+     */
     private int yCoord;
+    /**
+     * the name of the shape
+     */
     private String name;
+    /**
+     * the color for shape to be drawn in
+     */
     private Color shapeColor;
 
-
+    /**
+     * Constructor for Shape object
+     * @param xCoord    the xcoord for shape to be drawn at
+     * @param yCoord    the ycoord for shape to be drawn at
+     * @param name      the name of the shape
+     * @param shapeColor the color of shape to be drawn in
+     */
     public Shape(int xCoord, int yCoord, String name, Color shapeColor)
     {
         this.xCoord = xCoord;

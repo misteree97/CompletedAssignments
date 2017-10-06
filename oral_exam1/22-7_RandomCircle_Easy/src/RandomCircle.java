@@ -4,14 +4,17 @@ import java.lang.Math;
 
 /**
  * @author Elliot Lohr
+ * Program that displays a circle of random radius and computes the area and circumference and displays in jframe
  */
 public class RandomCircle extends JPanel
 {
+    /**
+     * The radius, initialized to a random number between 1-250
+     */
     private int radius = (int)(Math.random() * 250 + 1);
     public RandomCircle()
     {
         setSize(300, 300);
-        //setBackground(Color.BLACK);
     }
 
     @Override
@@ -22,9 +25,8 @@ public class RandomCircle extends JPanel
     public void paintComponent(Graphics g)
     {
         g.setColor(Color.BLACK);
-        g.drawOval(150,150, computeDiameter(), computeDiameter());
+        g.drawOval(150,150, computeDiameter(), computeDiameter());//drawOval draws using the diameter as opposed to radius
     }
-
     /**
      * computes and returns the diameter (radius*2)
      * @return diameter

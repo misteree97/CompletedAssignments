@@ -1,8 +1,20 @@
 import java.awt.*;
 
 public class Circle extends TwoDShape {
+    /**
+     * the radius of the circle
+     */
     private double radius;
 
+
+    /**
+     * Constructor for a circle object
+     * @param xCoord    the xcoord for circle to be drawn on
+     * @param yCoord    the ycoord for the circle to be drawn on
+     * @param name      the name of the circle
+     * @param c         the color for circle to be drawn in
+     * @param radius    the radius of the circle
+     */
     public Circle(int xCoord, int yCoord, String name, Color c, double radius)
     {
         super(xCoord, yCoord, name, c);
