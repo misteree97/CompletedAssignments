@@ -7,9 +7,9 @@ public class ComputusTester {
         System.out.println("Enter a year to calculate the date of Easter");
         double year = sc.nextDouble();
         Computus c = new Computus();
-        c.Gregorian(year);
+        c.gregorian(year);
         System.out.println("Month: " + c.getMonth() + " Day: " + c.getDay());
         System.out.println("MEDIUM PART");
-        c.DisplayEasterDates();
+        c.displayEasterDates();
     }
 }

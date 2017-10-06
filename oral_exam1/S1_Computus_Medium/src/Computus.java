@@ -3,6 +3,9 @@ public class Computus {
     private double day;
     private double year = 0.0;
 
+    /**
+     * No argument constructor
+     */
     public Computus() {
         year = 0;
     }
@@ -12,7 +15,8 @@ public class Computus {
      *
      * @param year        the year to compute when easter is
      */
-    public void Gregorian(double year) {
+    public void gregorian(double year) {
+        //gregorian formula for calculating date of easter given year
         double a = year % 19.0;
         double b = Math.floor(year / 100.0);
         double c = year % 100.0;
@@ -28,6 +32,10 @@ public class Computus {
         this.month = Math.floor((h + l - 7.0 * m + 114.0) / 31.0);
         this.day = (int)(h + l - 7.0 * m + 114.0) % 31.0 + 1.0;
 
+        //easter will only occur in march or april so looks for month 3.0 and 4.0
+    }
+    public void printEaster()
+    {
         if(month == 3.0)
         {
             System.out.println("Easter is March " + day);
@@ -36,23 +44,24 @@ public class Computus {
         {
             System.out.println("Easter is April " + day);
         }
+
     }
 
     /**
      * computes and prints the amount of times easter occurs on each day for an entire gregorian cycle
      */
-    public void DisplayEasterDates() {
-        int[][] date = new int[2][32];
+    public void displayEasterDates() {
+        int[][] date = new int[2][32]; //creates 2d array to contain all the dates of march and april
 
-        for(double i = 1.0; i <= 5700000.0; ++i) {
-            this.Gregorian(i);
+        for(double i = 1.0; i <= 5700000.0; ++i) { //runs through an entire gregorian cycle
+            this.gregorian(i);
             int iDay = (int)this.day;
             if (this.month == 3.0) {
-                ++date[0][iDay];
+                ++date[0][iDay]; //adds one to the march row and the day column calculated through gregorian()
             }
 
             if (this.month == 4.0) {
-                ++date[1][iDay];
+                ++date[1][iDay];//adds one to the april row and the day column calculated through gregorian()
             }
         }
 

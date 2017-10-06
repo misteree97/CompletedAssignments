@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @Author Elliot Lohr
+ */
 public class RandomCircleSpace extends JFrame
 {
     private JTextArea displayStats;
@@ -12,7 +15,7 @@ public class RandomCircleSpace extends JFrame
         displayStats.setText("Radius: " + ranCircle.getRadius() + "\nDiameter: " + ranCircle.computeDiameter() + "\n Area: " + ranCircle.computeArea() + "\n Cicumference: " + ranCircle.computeCircumference());
         displayStats.setEditable(false);
         add(ranCircle);
-        add(displayStats, BorderLayout.SOUTH);
+        add(displayStats, BorderLayout.SOUTH);//adds jtextarea to south position on frame
         setVisible(true);
 
     }

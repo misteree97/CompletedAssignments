@@ -16,7 +16,9 @@ public class ChangeComputer
     private int nickels = ((int)(Math.random() * 15));
     private int pennys = ((int)(Math.random() * 15));
 
-
+    /**
+     * No argument constructor 
+     */
     public ChangeComputer()
     {
         Scanner sc = new Scanner(System.in);

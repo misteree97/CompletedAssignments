@@ -11,8 +11,7 @@ public class RandomCircle extends JPanel
     public RandomCircle()
     {
         setSize(300, 300);
-        setBackground(Color.BLACK);
-        //paintComponent(null);
+        //setBackground(Color.BLACK);
     }
 
     @Override
