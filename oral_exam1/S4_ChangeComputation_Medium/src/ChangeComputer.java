@@ -60,6 +60,7 @@ public class ChangeComputer
         totalAmount = sc.nextDouble();
         System.out.println("Enter the amount paid");
         customerAmount = sc.nextDouble();
+        //if customer doesn't pay enough, asks for more
         while(customerAmount < totalAmount)
         {
             System.out.println("You must enter an amount paid that is > the price of the item. Please enter amount paid again.");
@@ -97,9 +98,9 @@ public class ChangeComputer
             int twentysGiven = 0;
             while(changeToGive >= 20.00  && twentys > 0)
             {
-                changeToGive = changeToGive - 20;
-                twentys--;
-                twentysGiven++;
+                changeToGive = changeToGive - 20; //updates the amount of change that still needs to be give
+                twentys--; //subtracts one $20 bill from register
+                twentysGiven++;//updates the amount of $20 bills given to customer
             }
             System.out.println("Twenties Given: " + twentysGiven);
         }

@@ -42,7 +42,7 @@ public class RandomCircle extends JPanel
 
     /**
      * computes the area of the circle(PI * radius^2)
-     * @return area
+     * @return area     the area
      */
     public int computeArea()
     {
@@ -52,7 +52,7 @@ public class RandomCircle extends JPanel
 
     /**
      * computes the circumference of the circle
-     * @return
+     * @return circumference    the circumference
      */
     public int computeCircumference()
     {

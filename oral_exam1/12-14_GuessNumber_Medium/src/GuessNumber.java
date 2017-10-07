@@ -40,10 +40,9 @@ public class GuessNumber extends JFrame {
      */
     private int ogDifference;
     /**
-     * Container used to hold components
+     * Container used to hold graphic components
      */
     Container container;
-
     /**
      * No argument constructor generates game and runs
      */
@@ -51,8 +50,8 @@ public class GuessNumber extends JFrame {
     {
         super("Guess Number Game");
         backColor = Color.WHITE;
-        container = getContentPane(); //Learn more about getcontentpane
-        container.setLayout(new FlowLayout());//same here
+        container = getContentPane(); //getContentPane calls layer that holds objects on it(https://stackoverflow.com/questions/16744152/java-gui-about-getcontentpane-method-and-content)
+        container.setLayout(new FlowLayout());//arranges in directional flow, like lines in a paragraph (https://docs.oracle.com/javase/7/docs/api/java/awt/FlowLayout.html)
         container.setBackground(backColor);
         text1 = new JLabel("I have a number between 1-1000. Guess the number!");
         text1.setSize(270,20);
@@ -87,7 +86,7 @@ public class GuessNumber extends JFrame {
 
         setSize(960, 960);
         setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
     /**
