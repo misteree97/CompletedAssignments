@@ -15,9 +15,6 @@ public class Computus {
      * The year that program will determine the date of easter in
      */
     private double year;
-
-
-
     /**
      * No argument constructor
      */

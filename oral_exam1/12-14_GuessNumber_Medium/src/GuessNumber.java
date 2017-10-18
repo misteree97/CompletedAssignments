@@ -62,13 +62,13 @@ public class GuessNumber extends JFrame {
 
         newGameButton = new JButton("New Game");
         newGameButton.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent e)
-            {
+       {
+           public void actionPerformed(ActionEvent e)
+           {
                 GuessNumber newGame = new GuessNumber();
                 dispose(); //closes previous window (Learned from StackOverFlow:https://stackoverflow.com/questions/2352727/closing-jframe-with-button-click5)
-            }
-        });
+           }
+       });
 
 
         userGuess = new JTextField(10);//user input field

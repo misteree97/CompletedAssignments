@@ -6,7 +6,7 @@ import java.awt.*;
  */
 public class InheritanceTester {
     /**
-     * Main method that creates shape objects and tests methods in the classes
+     * Main method that creates shape objects and tests methods in the classesub
      * @param args
      */
     public static void main(String[] args)
