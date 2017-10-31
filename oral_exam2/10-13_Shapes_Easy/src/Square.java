@@ -4,7 +4,7 @@ public class Square extends TwoDShape {
     {
         super(x,y,side,side);
     }
-    public void printInfo()
+    public void print()
     {
         System.out.println("(" + super.getX() + "," + super.getY() + ") " + "Side Length: " + super.getDimension1());
     }

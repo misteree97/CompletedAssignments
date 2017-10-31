@@ -25,6 +25,6 @@ public abstract class Shape {
     }
 
     public abstract String getName();
-    public abstract void printInfo();
+    public abstract void print();
 
 }

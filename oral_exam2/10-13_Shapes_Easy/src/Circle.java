@@ -10,7 +10,7 @@ public class Circle extends TwoDShape {
     {
         return "Circle";
     }
-    public void printInfo()
+    public void print()
     {
         System.out.println("(" + super.getX() + "," + super.getY() + ")" + " Radius: " + super.getDimension1());
     }

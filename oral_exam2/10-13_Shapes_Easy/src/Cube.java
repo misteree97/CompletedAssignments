@@ -5,7 +5,7 @@ public class Cube extends ThreeDShape {
         super(x,y,side,side,side);
     }
 
-    public void printInfo()
+    public void print()
     {
         System.out.print("(" + super.getX() + "," + super.getY() + ") " + "Side Length: " + super.getDimension1());
     }

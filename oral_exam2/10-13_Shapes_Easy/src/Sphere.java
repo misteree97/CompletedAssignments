@@ -3,7 +3,7 @@ public class Sphere extends ThreeDShape {
     {
         super(x, y, radius, radius, radius);
     }
-    public void printInfo()
+    public void print()
     {
         System.out.println("(" + super.getX() + "," + super.getY() + ") " + "Radius: " + super.getDimension1());
     }
