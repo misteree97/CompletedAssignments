@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/oral_exam2/10-13_Shapes_Easy/10-13_Shapes_Easy.iml" filepath="$PROJECT_DIR$/oral_exam2/10-13_Shapes_Easy/10-13_Shapes_Easy.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/12-14_GuessNumber_Medium/12-14_GuessNumber_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/12-14_GuessNumber_Medium/12-14_GuessNumber_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/22-7_RandomCircle_Easy/22-7_RandomCircle_Easy.iml" filepath="$PROJECT_DIR$/oral_exam1/22-7_RandomCircle_Easy/22-7_RandomCircle_Easy.iml" />
       <module fileurl="file://$PROJECT_DIR$/class_demos/ch03/Fig03_12/Fig03_12.iml" filepath="$PROJECT_DIR$/class_demos/ch03/Fig03_12/Fig03_12.iml" />
@@ -55,6 +56,7 @@
       <module fileurl="file://$PROJECT_DIR$/lab/Myfig2-6/Myfig2-6.iml" filepath="$PROJECT_DIR$/lab/Myfig2-6/Myfig2-6.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab/Quiz_10_18_2017/Quiz_10_18_2017.iml" filepath="$PROJECT_DIR$/lab/Quiz_10_18_2017/Quiz_10_18_2017.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab/Quiz_10_25_2017/Quiz_10_25_2017.iml" filepath="$PROJECT_DIR$/lab/Quiz_10_25_2017/Quiz_10_25_2017.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab/Quiz_11_3_2017/Quiz_11_3_2017.iml" filepath="$PROJECT_DIR$/lab/Quiz_11_3_2017/Quiz_11_3_2017.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/S1_Computus_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/S1_Computus_Medium/S1_Computus_Medium.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam2/S21_HangmanGUI_Hard.iml" filepath="$PROJECT_DIR$/oral_exam2/S21_HangmanGUI_Hard.iml" />
       <module fileurl="file://$PROJECT_DIR$/oral_exam1/S23_ShapeInheritanceHierarchy_Medium/S23_ShapeInheritanceHierarchy_Medium.iml" filepath="$PROJECT_DIR$/oral_exam1/S23_ShapeInheritanceHierarchy_Medium/S23_ShapeInheritanceHierarchy_Medium.iml" />
