@@ -52,7 +52,8 @@ public class BucketSort {
         }
         for(int i = 0; i < size; i++)
         {
-
+            bucketNum = (arrayToSort[i] % divider - arrayToSort[i] % (divider/10))/(divider/10);
+            arrayNum = ++bucket[bucketNum][0];
         }
     }
     public static void gatheringPass()
