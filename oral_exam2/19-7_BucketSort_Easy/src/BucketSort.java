@@ -36,8 +36,14 @@ public class BucketSort {
         }
         for(int i = 0; i <= numberOfDigits; i++)
         {
-            distributePass();
-            gatheringPass();
+            distributePass(arrayToSort, bucket, i);
+            gatheringPass(arrayToSort, bucket);
+
+            if(i != numberOfDigits)
+            {
+                clearBucket(bucket);
+            }
+
         }
     }
     public static void distributePass(int arrayToSort[], int bucket[][], int num)
@@ -54,10 +60,29 @@ public class BucketSort {
         {
             bucketNum = (arrayToSort[i] % divider - arrayToSort[i] % (divider/10))/(divider/10);
             arrayNum = ++bucket[bucketNum][0];
+            bucket[bucketNum][arrayNum] = arrayToSort[i];
         }
     }
-    public static void gatheringPass()
+    public static void gatheringPass(int arrayToSort[], int bucket[][])
     {
+        int counter = 0;
+        for(int i = 0; i < 10; i++)
+        {
+            for(int j = 1; j < bucket[i][0]; j++)
+            {
+                arrayToSort[counter++] = bucket[i][j];
+            }
+        }
+    }
+    public static void clearBucket(int bucket[][])
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            for(int j = 0; j < size; j++)
+            {
+                bucket[i][j] = 0;
+            }
+        }
 
     }
 }
