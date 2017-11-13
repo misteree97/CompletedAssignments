@@ -36,5 +36,19 @@ public class CalculatorGUI extends JFrame {
         {
             keyPad.add(buttons[i]);
         }
+        keyPad.add(buttons[11]);
+
+        for(int i = 1; i <= 3; i++)
+        {
+            keyPad.add(buttons[i]);
+        }
+
+        keyPad.add(buttons[13]);
+        keyPad.add(buttons[0]);
+
+        keyPad.add(buttons[15]);
+        keyPad.add(buttons[14]);
+        keyPad.add(buttons[12]);
+
     }
 }
