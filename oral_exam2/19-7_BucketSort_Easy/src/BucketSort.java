@@ -1,21 +1,21 @@
 public class BucketSort {
+    static int size = 12;
     public static void main(String[] args)
     {
-        int size = 12;
         int oneDArray[] = new int[size];
 
-        for(int i = 0; i < oneDArray.length; i++)
+        for(int i = 0; i < size; i++)
         {
             oneDArray[i] =(int)(Math.random() * 100);
         }
         System.out.println("Original Array: ");
-        for(int i = 0; i < oneDArray.length; i++)
+        for(int i = 0; i < size; i++)
         {
             System.out.print(oneDArray[i] + ", ");
         }
         sort(oneDArray);
         System.out.println("Sorted Array: ");
-        for(int i = 0; i < oneDArray.length; i++)
+        for(int i = 0; i < size; i++)
         {
             System.out.print(oneDArray[i] + ", ");
         }
