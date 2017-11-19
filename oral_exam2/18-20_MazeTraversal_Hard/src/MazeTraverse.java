@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MazeTraverse {
     static char maze[][] = {{'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'},
-                            {'#','.', '.', '.', '#', '.', '.', '.', '.', '.', '.', '.'},
+                            {'#', '.', '.', '.', '#', '.', '.', '.', '.', '.', '.', '#'},
                             {'.', '.', '#', '.', '#', '.', '#', '#', '#', '#', '.', '#'},
                             {'#', '#', '#', '.', '#', '.', '.', '.', '.', '#', '.', '#'},
                             {'#', '.', '.', '.', '.', '#', '#', '#', '.', '#', '.', '.'},
@@ -24,12 +24,12 @@ public class MazeTraverse {
         move++;
 
         printMaze();
-
+        //System.out.println("Maze should be printed");
         if(mazeExited(x, y) && move > 1)
         {
             System.out.println("Maze has been exited");
         }
-        else if(x == startX && y == startY)
+        else if(x == startX && y == startY && move >1)
         {
             System.out.println("Back at Start");
         }
@@ -42,33 +42,32 @@ public class MazeTraverse {
                 for(int i = 0; i < 4; i++)
                 {
                    if(validMove(x+1, y))
-                    {
-                        if (mazeTraversal(maze2, x, y + 1))
-                        {
-                            return true;
-                        }
-                        else if(validMove(x - 1, y))
-                        {
+                   {
+                       if (mazeTraversal(maze2, x, y + 1)) {
+                           return true;
+                       }
+                   }
+                   else if(validMove(x - 1, y))
+                   {
                             if (mazeTraversal(maze2, x - 1, y))
                             {
                                 return true;
                             }
-                        }
-                        else if(validMove(x, y+1))
-                        {
+                   }
+                   else if(validMove(x, y+1))
+                   {
                             if(mazeTraversal(maze2, x, y+1))
                             {
                                 return true;
                             }
-                        }
-                        else if(validMove(x, y -1))
-                        {
+                   }
+                   else if(validMove(x, y -1))
+                   {
                             if(mazeTraversal(maze2, x, y -1))
                             {
                                 return true;
                             }
-                        }
-                    }
+                   }
                 }
             }
             else if(kontinue == 2)
@@ -128,7 +127,7 @@ public class MazeTraverse {
                 {
                     System.out.print(" " + maze[i][j]);
                 }
-                System.out.println();
+                //System.out.println();
             }
             System.out.println();
         }
