@@ -1,62 +1,74 @@
-public class BucketSort {
-    static int size = 12;
-    public static void main(String[] args)
-    {
-        int oneDArray[] = new int[size];
+/**
+ * @author Elliot Lohr
+ * This class provides the functionality for a bucket sort
+ */
+public class BucketSort
+{
+    /**
+     * The size of the array
+     */
+    int size;
+    /**
+     * Array that needs to be sorted;
+     */
+    int oneDArray[];
 
-        for(int i = 0; i < size; i++)
-        {
-            oneDArray[i] =(int)(Math.random() * 100);
-        }
-        System.out.println("Original Array: ");
-        for(int i = 0; i < size; i++)
-        {
-            System.out.print(oneDArray[i] + ", ");
-        }
-        sort(oneDArray);
-        System.out.println("Sorted Array: ");
-        for(int i = 0; i < size; i++)
-        {
-            System.out.print(oneDArray[i] + ", ");
-        }
-    }
-    public static void sort(int arrayToSort[])
+    /**
+     * Constructor for a bucketsort object
+     * @param array     the array that needs to be sorted
+     */
+    public BucketSort(int array[])
     {
+        this.oneDArray = array;
+        size = array.length;
+    }
+
+    /**
+     * Sort method that takes in array and sorts it
+     * @param arrayToSort
+     */
+    public void sort(int arrayToSort[])
+    {
+        //bucket array used to organize number by last digit
         int bucket[][] = new int[10][12];
-        int greatestNumber = arrayToSort[0];
+        int greatestNumber = oneDArray[0];
         int numberOfDigits = 0;
 
-
-        for(int i = 0; i < arrayToSort.length; i++)
+        //finds the greatest number in the array
+        for(int i = 0; i < size; i++)
         {
             if(arrayToSort[i] > greatestNumber)
             {
                 greatestNumber = arrayToSort[i];
             }
         }
+        //Determines how many digits are in the number
         while(greatestNumber != 0)
         {
             numberOfDigits++;
             greatestNumber = greatestNumber / 10;
         }
-        for(int i = 0; i <= numberOfDigits; i++)
+        for(int j = 1; j <= numberOfDigits; j++)
         {
-            distributePass(arrayToSort, bucket, i);
+            //places each value value of one dimensional array into a row of bucket array depending on the values rightmost digit
+            distributePass(arrayToSort, bucket, j);
+            //copies the values back to the original array
             gatheringPass(arrayToSort, bucket);
 
-            if(i != numberOfDigits)
+            //clears bucket if there is still another digits place to sort
+            if(j != numberOfDigits)
             {
                 clearBucket(bucket);
             }
-
         }
     }
-    public static void distributePass(int arrayToSort[], int bucket[][], int num)
+    public void distributePass(int arrayToSort[], int bucket[][], int num)
     {
         int arrayNum, bucketNum; 
         int divider = 10;
-        int count = 0;
-        while(count!=num)
+        int count = 1;
+
+        while(count<num)
         {
             divider = divider*10;
             count++;
@@ -68,19 +80,25 @@ public class BucketSort {
             bucket[bucketNum][arrayNum] = arrayToSort[i];
         }
     }
-    public static void gatheringPass(int arrayToSort[], int bucket[][])
+    public void gatheringPass(int arrayToSort[], int bucket[][])
     {
         int counter = 0;
         for(int i = 0; i < 10; i++)
         {
-            for(int j = 1; j < bucket[i][0]; j++)
+            for(int j = 1; j <= bucket[i][0]; j++)
             {
                 arrayToSort[counter++] = bucket[i][j];
             }
         }
     }
+
+    /**
+     * Clears the bucket array
+     * @param bucket
+     */
     public static void clearBucket(int bucket[][])
     {
+        //sets each value in the bucket array to 0
         for(int i = 0; i < 10; i++)
         {
             for(int j = 0; j < 12; j++)
