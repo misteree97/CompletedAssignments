@@ -17,6 +17,13 @@ public class ShippingSection {
     private final Thread thread = new WorkerThread();
     private final Logger log = Logger.getLogger("TRUCK");
 
+    /**
+     * Constructor for a shipping section
+     * @param shippingSectionId     the ID for the shipping section
+     * @param lowerBound            the lower bound for characters that the shipping section will accept
+     * @param upperBound            the upper bound for characters that the shipping section will accept
+     * @param dock                  the ShippingDock that the ShippingSection will send orders to
+     */
     public ShippingSection(String shippingSectionId, char lowerBound, char upperBound, ShippingDock dock)
     {
         this.shippingSectionId = shippingSectionId;
@@ -30,11 +37,19 @@ public class ShippingSection {
     /* Called by the Shipping Center to enque a new delivery task.
         Returns true if the shipping address met lower-upper bound criteria.
         Otherwise, returns false.
-    * */
+    **/
+
+    /**
+     * Called by Shipping Center to enqeue a new delivery task
+     *
+     * @param task
+     * @return true if the shipping address met the lower/upper bound criteria. Otherwise returns false
+     */
     public boolean put(AwsTask task) {
         try {
             if (task.messageKind.equals("DELIVERY")) {
                 char letter = task.category.toUpperCase().charAt(0);
+                //determines if the item category fits the lower/upper bound criteria
                 if (letter >= lowerBound && letter <= upperBound) {
                     task.shippingSection = this.shippingSectionId;
                     queue.put(task);
@@ -50,6 +65,9 @@ public class ShippingSection {
         return false;
     }
 
+    /**
+     * Waits until the dock can accept tasks
+     */
     public void waitUntilDone() {
         try {
             thread.join();
@@ -59,12 +77,14 @@ public class ShippingSection {
         }
     }
 
-    /* Passes every task in the queue to the shipping dock */
+    /**
+     * Passes every task in the queue to shipping dock
+     */
     private class WorkerThread extends Thread {
         public void run() {
             try {
                 while (true) {
-                    AwsTask task = queue.poll(1, TimeUnit.SECONDS);
+                    AwsTask task = queue.poll(1, TimeUnit.SECONDS); //creates tasks from the head of the queue
                     if (task != null) {
                         Thread.sleep(ThreadLocalRandom.current().nextInt(0, 6) * 1000);
                         dock.put(task);

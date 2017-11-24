@@ -31,7 +31,7 @@ public class ShippingDock  {
      */
     public ShippingDock(DeliveryTruck[] trucks) {
         this.trucks = trucks;
-        this.queue = new ArrayBlockingQueue(10000); // really big queue buffer because the dock doesn't seem to have a space constraint
+        this.queue = new ArrayBlockingQueue(10000); //large capacity for queue because there aren't any constraints on how many orders can be held
         this.thread.start();
     }
 
