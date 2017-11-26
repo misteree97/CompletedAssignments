@@ -92,17 +92,16 @@ public class MazeTraverse {
                            return true;
                        }
                    }
-                   else //if no moves are valid, switch the spot to a 0 to mark it as a spot
+                   else //if no moves are valid, switch the spot to a 0 to mark it as a spot that has already been traversed over
                    {
                        mazeCopy[x][y] = '0';
                    }
             }
-            if(kontinue == 2)
+            if(kontinue == 2) //if the user wants to exit the program exit
             {
                 System.exit(0);
             }
         }
-        mazeCopy[x][y] = '0';
         return false;
     }
 
@@ -141,9 +140,9 @@ public class MazeTraverse {
 
     /**
      * method determines whether the maze has been exited
-     * @param row
-     * @param column
-     * @return
+     * @param row       the row the cursor is in
+     * @param column    the column the cursor is in
+     * @return          true if the cursor is at the exit spot of the maze
      */
     public boolean mazeExited(int row, int column)
     {

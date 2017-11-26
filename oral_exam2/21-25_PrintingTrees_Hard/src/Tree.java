@@ -69,24 +69,15 @@ public class Tree<T extends Comparable<T>>
             for(int i = 1; i <= totalSpaces; i++) //prints spaces between each node of tree
             {
                 System.out.print(" ");
-                textAreaText = textAreaText + " ";
+                textAreaText = textAreaText + " "; //updates spaces for the TreeGui
             }
             System.out.println(node.data);
-            textAreaText = textAreaText + (String.valueOf(node.data));
+            textAreaText = textAreaText + (String.valueOf(node.data)); //adds node values to tree gui
             textAreaText = textAreaText + "\n";
             outputTree(totalSpaces + 5, node.leftNode); //recursive call to output tree with the left node
         }
     }
-    public String outputTreeGui(int totalSpaces, TreeNode<T> node)
-    {
-        if(node != null)
-        {
-            //outputTreeGui(totalSpaces + 5, node.rightNode);
-            //for(int i = 1; i <= )
 
-        }
-        return "";
-    }
 
 
 

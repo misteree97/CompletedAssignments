@@ -48,6 +48,7 @@ public class BucketSort
             numberOfDigits++;
             greatestNumber = greatestNumber / 10;
         }
+        //go through every number and sort the numbers based off the value of their ones place
         for(int j = 1; j <= numberOfDigits; j++)
         {
             //places each value value of one dimensional array into a row of bucket array depending on the values rightmost digit
@@ -62,12 +63,20 @@ public class BucketSort
             }
         }
     }
+
+    /**
+     * Distributing pass method for a bucket sort
+     * @param arrayToSort   the array of numbers that need to be sorted
+     * @param bucket        the bucket array used to organize numbers
+     * @param num
+     */
     public void distributePass(int arrayToSort[], int bucket[][], int num)
     {
         int arrayNum, bucketNum; 
         int divider = 10;
         int count = 1;
 
+        //determines the divisor to get the correct digit
         while(count<num)
         {
             divider = divider*10;
@@ -75,11 +84,20 @@ public class BucketSort
         }
         for(int i = 0; i < 12; i++)
         {
-            bucketNum = (arrayToSort[i] % divider - arrayToSort[i] % (divider/10))/(divider/10);
+
+            bucketNum = (arrayToSort[i] % divider - arrayToSort[i] % (divider/10))/(divider/10); //Received help retrieving which bucket to place the number in from John Carlson
+            //determines which row element to store the number in
             arrayNum = ++bucket[bucketNum][0];
+            //stores number in the bucket array according to which bucket number and the arrayNumber
             bucket[bucketNum][arrayNum] = arrayToSort[i];
         }
     }
+
+    /**
+     * Gathering pass, which takes the bucket array and puts the values back in the original array
+     * @param arrayToSort   the original array that needed to be sorted
+     * @param bucket        the bucket that has the numbers organized by digit
+     */
     public void gatheringPass(int arrayToSort[], int bucket[][])
     {
         int counter = 0;
@@ -87,6 +105,7 @@ public class BucketSort
         {
             for(int j = 1; j <= bucket[i][0]; j++)
             {
+                //places the sorted values from the bucket back into original array
                 arrayToSort[counter++] = bucket[i][j];
             }
         }
