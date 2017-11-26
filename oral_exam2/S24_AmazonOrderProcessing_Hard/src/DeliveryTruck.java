@@ -4,6 +4,10 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * @author Elliot Lohr
+ * This class is a blueprint for a DeliveryTruck object, which will print the information about the orders to the console
+ */
 public class DeliveryTruck {
     private final String truckId;
     private final ArrayBlockingQueue<AwsTask> queue;
@@ -58,7 +62,7 @@ public class DeliveryTruck {
                         if (task.messageKind.equals("DELIVERY")) {
                             // if we have a delivery to do, simulate route
                             // Thread.sleep(ThreadLocalRandom.current().nextInt(0, 11) * 1000);
-                            Thread.sleep(ThreadLocalRandom.current().nextInt(0, 1) * 1000);
+                            Thread.sleep(ThreadLocalRandom.current().nextInt(0, 11) * 1000);
                             printInformation(task);
                         } else {
                             // this has to be "FINISHED"

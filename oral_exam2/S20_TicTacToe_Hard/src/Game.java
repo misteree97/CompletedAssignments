@@ -5,7 +5,7 @@ public class Game {
     private Player player2;
     Scanner sc = new Scanner(System.in);
     private Board gameBoard;
-    private boolean player1Turn = true;
+    private int whosTurn =1;
 
 
     public Game()
@@ -26,48 +26,77 @@ public class Game {
             player2 = new ComputerPlayer(2);
         }
     }
-    public boolean playGame()
+    public boolean PlayGame()
     {
         gameBoard.printBoard();
-        if(gameBoard.catsGame())
-        {
-            System.out.println("Cats game, program will now exit");
-            System.exit(0);
-        }
 
-        if(player1Turn)
+        if(!Won())
         {
-            System.out.println("It is player X's turn");
-            player1.play(gameBoard);
+            System.out.println("It's player" + determineWhosTurn() + "turn");
+
+            if(determineWhosTurn() == 1)
+            {
+                player1.play(gameBoard);
+            }
+            else
+            {
+                player2.play(gameBoard);
+            }
+
+            if(gameBoard.catsGame())
+            {
+                System.out.println("Cats game, program will now exit");
+                System.exit(0);
+            }
+            return true;
         }
         else
         {
-            System.out.println("It is player O's turn");
-            player2.play(gameBoard);
+            if(gameBoard.checkDiagonalW() == 3 || gameBoard.checkLineW() == 3)
+            {
+                System.out.println("Player 1 won");
+            }
+            else if(gameBoard.checkDiagonalW() == 6 || gameBoard.checkDiagonalW() == 6)
+            {
+                System.out.println("Player 2 won");
+            }
+            return false;
+        }
+
+    }
+    public int determineWhosTurn()
+    {
+        if(whosTurn % 2 == 1)
+        {
+            return 1;
+        }
+        else if(whosTurn % 2 == 0)
+        {
+            return 2;
+        }
+        else
+        {
+            return 0;
         }
     }
-    public void whoWon()
+    public boolean whoWon()
     {
+        boolean player1Wins = false;
         if(gameBoard.checkLineW() == 3)
         {
-            System.out.println("Player 1 won!");
-            System.exit(0);
-
+            player1Wins = true;
         }
         else if(gameBoard.checkLineW() == 6)
         {
-            System.out.println("Player 2 won!");
-            System.exit(0);
+
         }
         else if(gameBoard.checkDiagonalW() == 3)
         {
-            System.out.println("Player 1 won!");
-            System.exit(0);
+            player1Wins = true;
         }
         else if(gameBoard.checkDiagonalW() == 6)
         {
-            System.out.println("Player 2 won");
-            System.exit(0);
+
         }
         else
         {
