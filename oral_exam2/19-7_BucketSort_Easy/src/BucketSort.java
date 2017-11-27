@@ -68,7 +68,7 @@ public class BucketSort
      * Distributing pass method for a bucket sort
      * @param arrayToSort   the array of numbers that need to be sorted
      * @param bucket        the bucket array used to organize numbers
-     * @param num
+     * @param num           which digit needs to be sorted
      */
     public void distributePass(int arrayToSort[], int bucket[][], int num)
     {

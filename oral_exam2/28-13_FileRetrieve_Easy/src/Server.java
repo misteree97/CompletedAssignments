@@ -3,7 +3,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 //can't test because programmed on personal laptop, need to be tested on class laptops
-public class Server {
+public class Server  {
     private ServerSocket server;
     private Socket connector;
     private BufferedReader reader;
@@ -28,7 +28,6 @@ public class Server {
             connector = server.accept(); //Listens for a connection to be made to this socket, returns a socket when connection with client is established
             writer = new BufferedWriter(new OutputStreamWriter(connector.getOutputStream())); //gets a reference to the sockets output stream
             reader = new BufferedReader(new InputStreamReader(connector.getInputStream())); //gets a reference to the sockets input streams
-            System.out.println("What file are you looking for?");
             String fileName = reader.readLine();
             File checkFile = new File(fileName);
 
