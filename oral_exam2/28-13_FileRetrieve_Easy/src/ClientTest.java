@@ -1,7 +1,8 @@
 import javax.swing.*;
 
 /**
- * Created by elohr on 11/26/17.
+ * @author Elliot Lohr
+ * This class is used to test the Client2 class
  */
 public class ClientTest
 {

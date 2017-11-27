@@ -1,11 +1,21 @@
 /**
- * Created by elohr on 11/26/17.
+ * @author Elliot Lohr
+ * This class provides functionality for the ComputerPlayer
  */
 public class ComputerPlayer extends Player {
+    /**
+     * Constructor for ComputerPlayer object
+     * @param player    Player # (1 or 2)
+     */
     public ComputerPlayer(int player)
     {
         super(player);
     }
+
+    /**
+     * Simple Computer Player that makes move going left to right through board
+     * @param gameBoard
+     */
     @Override
     public void makeMove(Board gameBoard)
     {

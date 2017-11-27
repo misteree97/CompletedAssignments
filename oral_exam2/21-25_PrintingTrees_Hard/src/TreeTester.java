@@ -1,5 +1,9 @@
 import java.security.SecureRandom;
 
+/**
+ * @author Elliot Lohr
+ * This program tests the tree class
+ */
 public class TreeTester {
     public static void main(String[] args)
     {

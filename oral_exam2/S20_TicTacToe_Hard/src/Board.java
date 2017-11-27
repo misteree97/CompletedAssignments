@@ -1,5 +1,6 @@
 /**
- * Created by elohr on 11/26/17.
+ * @author Elliot Lohr
+ * This class provides a blueprint for a Board object
  */
 public class Board {
     /**
@@ -7,6 +8,9 @@ public class Board {
      */
     private int[][] board;
 
+    /**
+     * Constructor for a Board, sets initial array values to 0
+     */
     public Board()
     {
         board = new int[3][3];
@@ -20,6 +24,9 @@ public class Board {
         }
     }
 
+    /**
+     * Prints the gameBoard with X's and O's if the player has made moves
+     */
     public void printBoard()
     {
         for(int row = 0; row < 3; row++)
@@ -42,6 +49,11 @@ public class Board {
             System.out.println();
         }
     }
+
+    /**
+     * Check to see if anyone has won the game
+     * @return who won the game, 0 if nobody has
+     */
     public int checkWin()
     {
         //Checks to see if a player has one with a horizontal row of X's/O;s
@@ -87,6 +99,12 @@ public class Board {
         }
         return 0;
     }
+
+    /**
+     * Edits the array location depending on the players move
+     * @param move      array spot to be altered
+     * @param player    which player is making a move
+     */
     public void setArrayLocation(int move[], int player)
     {
         if(player == 1)
@@ -98,6 +116,12 @@ public class Board {
             board[move[0]][move[1]] = -1;
         }
     }
+
+    /**
+     * Gets whether the spot on the board has already been played
+     * @param location      location on board that needs to be accessed
+     * @return 1 if player 1 has played there, or -1 if player 2 has played there otherwise 0
+     */
     public int getBoardLocation(int[] location)
     {
         if(board[location[0]][location[1]] == 1)
@@ -113,6 +137,11 @@ public class Board {
             return 0;
         }
     }
+
+    /**
+     * Determines whether the board is full and nobody has won
+     * @return 1 if catsGame, -1 otherwise
+     */
     public int catsGame()
     {
         //if there is a spot that hasn't been filled yet return -1, game can still be played

@@ -19,12 +19,14 @@ public class HumanPlayer extends Player {
         System.out.println("which column would you like to place a marker in?");
         move[1] = sc.nextInt();
 
+        //determines whether the player can put a marking in the location chosen
+        //exits program if they enter an invalid option
         if(validMove(move, gameBoard) == -1)
         {
             System.out.println("This spot was already taken bozo");
             System.exit(0);
         }
-        else
+        else //the spot is valid
         {
             gameBoard.setArrayLocation(move, getPlayerNumber());
         }

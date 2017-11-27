@@ -12,16 +12,45 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
+/**
+ * @author ELliot Lohr
+ * This class provides a client template that can communicate with a server. Code from in class example is reused in this assignment
+ */
 public class Client2 extends JFrame {
-    private JTextField enterField; // enters information from user
-    private JTextArea displayArea; // display information to user
-    private ObjectOutputStream output; // output stream to server
-    private ObjectInputStream input; // input stream from server
-    private String message = ""; // message from server
-    private String chatServer; // host server for this application
-    private Socket client; // socket to communicate with server
+    /**
+     * textField used to enter information in Client
+     */
+    private JTextField enterField;
+    /**
+     * TextArea to display messages
+     */
+    private JTextArea displayArea;
+    /**
+     * Output to the server
+     */
+    private ObjectOutputStream output;
+    /**
+     * input from the server
+     */
+    private ObjectInputStream input;
+    /**
+     * message from server
+     */
+    private String message = "";
+    /**
+     * host server for application
+     */
+    private String chatServer;
+    /**
+     * socket to communicate with server
+     */
+    private Socket client;
 
-    // initialize chatServer and set up GUI
+
+    /**
+     * Initialize client and set up gui
+     * @param host  server which client connects
+     */
     public Client2(String host) {
         super("Client");
 
@@ -48,7 +77,9 @@ public class Client2 extends JFrame {
         setVisible(true); // show window
     }
 
-    // connect to server and process messages from server
+    /**
+     *  used to run the client and connect to server
+     */
     public void runClient() {
         try // connect to server, get streams, process connection
         {
@@ -64,7 +95,10 @@ public class Client2 extends JFrame {
         }
     }
 
-    // connect to server
+    /**
+     * Connects to server
+     * @throws IOException
+     */
     private void connectToServer() throws IOException {
         displayMessage("Attempting connection\n");
 
@@ -76,7 +110,10 @@ public class Client2 extends JFrame {
                 client.getInetAddress().getHostName());
     }
 
-    // get streams to send and receive data
+    /**
+     * get streams to send and receive data
+     * @throws IOException
+     */
     private void getStreams() throws IOException {
         // set up output stream for objects
         output = new ObjectOutputStream(client.getOutputStream());
@@ -88,7 +125,11 @@ public class Client2 extends JFrame {
         displayMessage("\nGot I/O streams\n");
     }
 
-    // process connection with server
+
+    /**
+     * process connection with server
+     * @throws IOException
+     */
     private void processConnection() throws IOException {
         // enable enterField so client user can send messages
         setTextFieldEditable(true);
@@ -106,7 +147,9 @@ public class Client2 extends JFrame {
         } while (!message.equals("SERVER>>> TERMINATE"));
     }
 
-    // close streams and socket
+    /**
+     * close streams and socket
+     */
     private void closeConnection() {
         displayMessage("\nClosing connection");
         setTextFieldEditable(false); // disable enterField
@@ -121,6 +164,11 @@ public class Client2 extends JFrame {
     }
 
     // send message to server
+
+    /**
+     * send message to server
+     * @param message   the message
+     */
     private void sendData(String message) {
         try // send object to server
         {
@@ -132,7 +180,10 @@ public class Client2 extends JFrame {
         }
     }
 
-    // manipulates displayArea in the event-dispatch thread
+    /**
+     * alters displayArea in the event-dispatch thread
+     * @param messageToDisplay
+     */
     private void displayMessage(final String messageToDisplay) {
         SwingUtilities.invokeLater(
                 new Runnable() {
@@ -144,7 +195,10 @@ public class Client2 extends JFrame {
         );
     }
 
-    // manipulates enterField in the event-dispatch thread
+    /**
+     * manipulates enterField in the event-dispatch thread
+     * @param editable
+     */
     private void setTextFieldEditable(final boolean editable) {
         SwingUtilities.invokeLater(
                 new Runnable() {
