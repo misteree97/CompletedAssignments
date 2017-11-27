@@ -19,6 +19,7 @@ public class ComputerPlayer extends Player {
     @Override
     public void makeMove(Board gameBoard)
     {
+        //sometimes works sometimes doesn't
         for(int row = 0; row < 3; row++)
         {
             move[0] = row;
