@@ -72,6 +72,7 @@ public class Game {
             if(gameBoard.checkWin() == 1)
             {
                 System.out.println("Player 1 won!");
+                System.exit(0);
             }
             if(gameBoard.checkWin() == -1) {
                 System.out.println("Player 2 won!");

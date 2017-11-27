@@ -19,5 +19,8 @@ public class ComputusTester {
         c.printEaster();
         System.out.println("MEDIUM PART");
         c.displayEasterDates();
+
+        int idgaf = 1 / 2;
+        System.out.println(idgaf);
     }
 }

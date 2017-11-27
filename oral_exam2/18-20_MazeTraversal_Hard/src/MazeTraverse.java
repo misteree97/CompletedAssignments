@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+
+/**
+ * @author Elliot Lohr
+ * This class provides a blueprint for a maze traversal program
+ */
 public class MazeTraverse {
     /**
      * 2D array of characters that represents the maze to be traversed through
