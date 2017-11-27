@@ -2,7 +2,7 @@
  * Created by elohr on 11/26/17.
  */
 public abstract class Player {
-    int[] move;
+    int[] move = new int[2];
     int playerNumber;
 
     public Player(int player)
@@ -22,6 +22,10 @@ public abstract class Player {
         {
             return -1;
         }
+    }
+    public int getPlayerNumber()
+    {
+        return playerNumber;
     }
 
 }

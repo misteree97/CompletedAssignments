@@ -32,11 +32,11 @@ public class Board {
                 }
                 else if(board[row][column] == 1)
                 {
-                    System.out.print("X");
+                    System.out.print(" X ");
                 }
                 else if(board[row][column] == -1)
                 {
-                    System.out.print("O");
+                    System.out.print(" O ");
                 }
             }
             System.out.println();
@@ -51,7 +51,7 @@ public class Board {
             {
                 return 1;
             }
-            else if(board[row][0] + board[row][1] + board[row][3] == -3)
+            else if(board[row][0] + board[row][1] + board[row][2] == -3)
             {
                 return -1;
             }
@@ -73,15 +73,15 @@ public class Board {
         {
             return 1;
         }
-        if(board[0][0] + board[1][1] + board[2][2] == 6)
+        if(board[0][0] + board[1][1] + board[2][2] == -3)
         {
             return -1;
         }
-        if(board[3][0] + board[1][1] + board[0][2] == 3)
+        if(board[2][0] + board[1][1] + board[0][2] == 3)
         {
             return 1;
         }
-        if(board[3][0] + board[1][1] + board[0][2] == 6)
+        if(board[2][0] + board[1][1] + board[0][2] == -3)
         {
             return -1;
         }
@@ -130,9 +130,4 @@ public class Board {
         return 1;
     }
 
-    public static void main(String[] args)
-    {
-        Board newBoard = new Board();
-        newBoard.printBoard();
-    }
 }

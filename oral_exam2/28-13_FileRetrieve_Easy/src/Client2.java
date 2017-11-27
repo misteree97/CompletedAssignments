@@ -1,3 +1,6 @@
+// Fig. 28.5: Client.java
+// Client portion of a stream-socket connection between client and server.
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,51 +12,50 @@ import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-/**
- * Created by elohr on 11/26/17.
- */
 public class Client2 extends JFrame {
     private JTextField enterField; // enters information from user
     private JTextArea displayArea; // display information to user
     private ObjectOutputStream output; // output stream to server
-    private ObjectInputStream input;
+    private ObjectInputStream input; // input stream from server
+    private String message = ""; // message from server
     private String chatServer; // host server for this application
-    private String message = "";
     private Socket client; // socket to communicate with server
 
-    public Client2(String host)
-    {
+    // initialize chatServer and set up GUI
+    public Client2(String host) {
         super("Client");
-        chatServer = host;
 
-        enterField = new JTextField();
+        chatServer = host; // set server to which this client connects
+
+        enterField = new JTextField(); // create enterField
         enterField.setEditable(false);
         enterField.addActionListener(
                 new ActionListener() {
-                    public void actionPerformed(ActionEvent e)
-                    {
-                        sendData(e.getActionCommand());
+                    // send message to server
+                    public void actionPerformed(ActionEvent event) {
+                        sendData(event.getActionCommand());
                         enterField.setText("");
                     }
                 }
         );
-        add(enterField, BorderLayout.NORTH);
-        displayArea = new JTextArea();
-        add(displayArea, BorderLayout.CENTER);
 
-        setSize(300,150);
-        setVisible(true);
+        add(enterField, BorderLayout.NORTH);
+
+        displayArea = new JTextArea(); // create displayArea
+        add(new JScrollPane(displayArea), BorderLayout.CENTER);
+
+        setSize(300, 150); // set size of window
+        setVisible(true); // show window
     }
 
-    public void runClient()
-    {
-        try
+    // connect to server and process messages from server
+    public void runClient() {
+        try // connect to server, get streams, process connection
         {
-            connectToServer();
-            getStreams();
-            processConnection();
-        }
-        catch (EOFException eofException) {
+            connectToServer(); // create a Socket to make connection
+            getStreams(); // get the input and output streams
+            processConnection(); // process connection
+        } catch (EOFException eofException) {
             displayMessage("\nClient terminated connection");
         } catch (IOException ioException) {
             ioException.printStackTrace();
@@ -61,6 +63,8 @@ public class Client2 extends JFrame {
             closeConnection(); // close connection
         }
     }
+
+    // connect to server
     private void connectToServer() throws IOException {
         displayMessage("Attempting connection\n");
 
@@ -71,17 +75,8 @@ public class Client2 extends JFrame {
         displayMessage("Connected to: " +
                 client.getInetAddress().getHostName());
     }
-    // manipulates displayArea in the event-dispatch thread
-    private void displayMessage(final String messageToDisplay) {
-        SwingUtilities.invokeLater(
-                new Runnable() {
-                    public void run() // updates displayArea
-                    {
-                        displayArea.append(messageToDisplay);
-                    }
-                }
-        );
-    }
+
+    // get streams to send and receive data
     private void getStreams() throws IOException {
         // set up output stream for objects
         output = new ObjectOutputStream(client.getOutputStream());
@@ -93,39 +88,7 @@ public class Client2 extends JFrame {
         displayMessage("\nGot I/O streams\n");
     }
 
-    // manipulates enterField in the event-dispatch thread
-    private void setTextFieldEditable(final boolean editable) {
-        SwingUtilities.invokeLater(
-                new Runnable() {
-                    public void run() // sets enterField's editability
-                    {
-                        enterField.setEditable(editable);
-                    }
-                }
-        );
-    }
-    private void sendData(String message) {
-        try // send object to server
-        {
-            output.writeObject("CLIENT>>> " + message);
-            output.flush(); // flush data to output
-            displayMessage("\nCLIENT>>> " + message);
-        } catch (IOException ioException) {
-            displayArea.append("\nError writing object");
-        }
-    }
-    private void closeConnection() {
-        displayMessage("\nClosing connection");
-        setTextFieldEditable(false); // disable enterField
-
-        try {
-            output.close(); // close output stream
-            input.close(); // close input stream
-            client.close(); // close socket
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
-        }
-    }
+    // process connection with server
     private void processConnection() throws IOException {
         // enable enterField so client user can send messages
         setTextFieldEditable(true);
@@ -141,5 +104,55 @@ public class Client2 extends JFrame {
             }
 
         } while (!message.equals("SERVER>>> TERMINATE"));
+    }
+
+    // close streams and socket
+    private void closeConnection() {
+        displayMessage("\nClosing connection");
+        setTextFieldEditable(false); // disable enterField
+
+        try {
+            output.close(); // close output stream
+            input.close(); // close input stream
+            client.close(); // close socket
+        } catch (IOException ioException) {
+            ioException.printStackTrace();
+        }
+    }
+
+    // send message to server
+    private void sendData(String message) {
+        try // send object to server
+        {
+            output.writeObject(message);
+            output.flush(); // flush data to output
+            displayMessage("\nCLIENT>>> " + message);
+        } catch (IOException ioException) {
+            displayArea.append("\nError writing object");
+        }
+    }
+
+    // manipulates displayArea in the event-dispatch thread
+    private void displayMessage(final String messageToDisplay) {
+        SwingUtilities.invokeLater(
+                new Runnable() {
+                    public void run() // updates displayArea
+                    {
+                        displayArea.append(messageToDisplay);
+                    }
+                }
+        );
+    }
+
+    // manipulates enterField in the event-dispatch thread
+    private void setTextFieldEditable(final boolean editable) {
+        SwingUtilities.invokeLater(
+                new Runnable() {
+                    public void run() // sets enterField's editability
+                    {
+                        enterField.setEditable(editable);
+                    }
+                }
+        );
     }
 }
