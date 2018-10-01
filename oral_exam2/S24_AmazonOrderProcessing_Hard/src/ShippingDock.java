@@ -96,9 +96,6 @@ class ShippingDock {
             }
         }
 
-        /**
-         *
-         */
         private void waitForAllTrucksToFinish()
         {
             for(int i = 0; i < trucks.length; i++) {

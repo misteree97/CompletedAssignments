@@ -71,7 +71,7 @@ public class Tree<T extends Comparable<T>>
                 System.out.print(" ");
                 textAreaText = textAreaText + " "; //updates spaces for the TreeGui
             }
-            System.out.println(node.data);
+            System.out.println(node.data + "\n");
             textAreaText = textAreaText + (String.valueOf(node.data)); //adds node values to tree gui
             textAreaText = textAreaText + "\n";
             outputTree(totalSpaces + 5, node.leftNode); //recursive call to output tree with the left node

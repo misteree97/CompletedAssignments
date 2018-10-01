@@ -131,7 +131,7 @@ public class Server2 extends JFrame
         {
             try // read message and display it
             {
-                message = (String) input.readObject(); // read new message
+                message = (String)input.readObject(); // read new message
                 displayMessage(fileContents(message)); // display message
                 sendData(fileContents(message));
             } catch (ClassNotFoundException classNotFoundException) {
